@@ -18,6 +18,9 @@ import {
   BarChart3,
   Zap,
   Shield,
+  Twitter,
+  Linkedin,
+  Instagram,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/header";
@@ -88,8 +91,8 @@ export default function Index() {
       </section>
 
       {/* Features Section */}
-      <section className="max-w-7xl mx-auto px-6 py-32">
-        <div className="text-center mb-20">
+      <section className="max-w-7xl mx-auto px-6 py-8 sm:py-32">
+        <div className="text-center mb-20 sm:mx-8">
           <Badge className="mb-6 glass-effect border-glass-border px-4 py-2 text-sm">
             Recursos Avançados
           </Badge>
@@ -104,7 +107,7 @@ export default function Index() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <Card className="glass-effect border-glass-border glass-hover group">
-            <CardHeader className="p-8">
+            <CardHeader className="p-4 py-8 sm:p-8">
               <div className="w-16 h-16 bg-gradient-to-br from-gradient-purple to-gradient-blue rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Calendar className="w-8 h-8 text-white" />
               </div>
@@ -119,7 +122,7 @@ export default function Index() {
           </Card>
 
           <Card className="glass-effect border-glass-border glass-hover group">
-            <CardHeader className="p-8">
+            <CardHeader className="p-4 py-8 sm:p-8">
               <div className="w-16 h-16 bg-gradient-to-br from-gradient-blue to-gradient-pink rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <BarChart3 className="w-8 h-8 text-white" />
               </div>
@@ -134,7 +137,7 @@ export default function Index() {
           </Card>
 
           <Card className="glass-effect border-glass-border glass-hover group">
-            <CardHeader className="p-8">
+            <CardHeader className="p-4 py-8 sm:p-8">
               <div className="w-16 h-16 bg-gradient-to-br from-gradient-pink to-gradient-yellow rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Brain className="w-8 h-8 text-white" />
               </div>
@@ -149,7 +152,7 @@ export default function Index() {
           </Card>
 
           <Card className="glass-effect border-glass-border glass-hover group">
-            <CardHeader className="p-8">
+            <CardHeader className="p-4 py-8 sm:p-8">
               <div className="w-16 h-16 bg-gradient-to-br from-gradient-yellow to-gradient-purple rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <FileText className="w-8 h-8 text-white" />
               </div>
@@ -166,37 +169,76 @@ export default function Index() {
       </section>
 
       {/* Trust Section */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="text-center mb-16">
-          <p className="text-sm text-muted-foreground uppercase tracking-widest mb-8">
+      <section className="max-w-7xl mx-auto py-2 sm:py-8 px-8">
+        <div className="text-center mb-20">
+          <Badge className="mb-6 glass-effect border-glass-border px-4 py-2 text-sm">
             Confiável e Seguro
+          </Badge>
+          <h2 className="text-5xl md:text-6xl font-light text-foreground mb-6 tracking-tight">
+            Sua privacidade é{" "}
+            <span className="gradient-text">nossa prioridade</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Utilizamos as melhores práticas de segurança para garantir que seus
+            dados estejam sempre protegidos.
           </p>
-          <div className="flex items-center justify-center gap-12 opacity-60">
-            <div className="flex items-center gap-3">
-              <Shield className="w-6 h-6" />
-              <span className="text-sm font-medium">Certificado ISO</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Zap className="w-6 h-6" />
-              <span className="text-sm font-medium">LGPD Compliant</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Heart className="w-6 h-6" />
-              <span className="text-sm font-medium">
-                Aprovado por Psicólogos
-              </span>
-            </div>
-          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Card className="glass-effect border-glass-border glass-hover group">
+            <CardHeader className="p-8">
+              <div className="w-16 h-16 bg-gradient-to-br from-gradient-green to-gradient-blue rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+              <CardTitle className="text-xl text-foreground mb-3">
+                Criptografia de Ponta
+              </CardTitle>
+              <CardDescription className="text-muted-foreground leading-relaxed">
+                Todos os seus dados são criptografados em trânsito e em repouso,
+                seguindo os padrões mais altos da indústria.
+              </CardDescription>
+            </CardHeader>
+          </Card>
+
+          <Card className="glass-effect border-glass-border glass-hover group">
+            <CardHeader className="p-8">
+              <div className="w-16 h-16 bg-gradient-to-br from-gradient-blue to-gradient-pink rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Zap className="w-8 h-8 text-white" />
+              </div>
+              <CardTitle className="text-xl text-foreground mb-3">
+                Conformidade LGPD
+              </CardTitle>
+              <CardDescription className="text-muted-foreground leading-relaxed">
+                Seguimos rigorosamente a Lei Geral de Proteção de Dados para
+                garantir seus direitos e sua privacidade.
+              </CardDescription>
+            </CardHeader>
+          </Card>
+
+          <Card className="glass-effect border-glass-border glass-hover group">
+            <CardHeader className="p-8">
+              <div className="w-16 h-16 bg-gradient-to-br from-gradient-pink to-gradient-purple rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Heart className="w-8 h-8 text-white" />
+              </div>
+              <CardTitle className="text-xl text-foreground mb-3">
+                Validação Profissional
+              </CardTitle>
+              <CardDescription className="text-muted-foreground leading-relaxed">
+                Nossa metodologia é desenvolvida e validada em colaboração com
+                psicólogos e especialistas em saúde mental.
+              </CardDescription>
+            </CardHeader>
+          </Card>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="max-w-6xl mx-auto px-6 py-32">
+      <section className="max-w-6xl mx-auto px-6 py-16 sm:py-32">
         <div className="relative">
           <Card className="glass-effect border-glass-border overflow-hidden">
             <div className="absolute inset-0 gradient-bg opacity-30"></div>
-            <CardContent className="relative p-16 text-center">
-              <h2 className="text-5xl md:text-6xl font-light text-foreground mb-6 tracking-tight leading-tight">
+            <CardContent className="relative p-4 py-8 sm:p-16 text-center">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-foreground mb-6 tracking-tight leading-tight">
                 O futuro do seu{" "}
                 <span className="gradient-text">bem-estar emocional</span>{" "}
                 começa aqui
@@ -205,11 +247,11 @@ export default function Index() {
                 Junte-se a milhares de pessoas que já transformaram sua saúde
                 mental com o Humora e nossa tecnologia de IA.
               </p>
-              <div className="flex items-center justify-center gap-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <Button
                   size="lg"
                   onClick={() => navigate("/register")}
-                  className="text-lg px-8 py-4 bg-white text-black hover:bg-white/90 font-semibold metal-shine h-14"
+                  className="text-lg px-8 py-4 bg-white text-black hover:bg-white/90 font-semibold metal-shine h-14 w-full"
                 >
                   Criar conta gratuita
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -217,7 +259,7 @@ export default function Index() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-lg px-8 py-4 glass-effect border-glass-border hover:border-white/30 text-foreground h-14 glass-hover"
+                  className="text-lg w-full px-8 py-4 glass-effect border-glass-border hover:border-white/30 text-foreground h-14 glass-hover"
                 >
                   Falar conosco
                 </Button>
@@ -229,9 +271,9 @@ export default function Index() {
 
       {/* Footer */}
       <footer className="border-t border-glass-border bg-card/50">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div className="md:col-span-2">
+        <div className="max-w-7xl mx-auto px-6 py-8 sm:py-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
+            <div className="col-span-2 md:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
                 <CompanyIcon className="w-10 h-10" />
                 <span className="text-2xl font-bold text-foreground">
@@ -322,8 +364,8 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between pt-8 border-t border-glass-border">
-            <p className="text-muted-foreground">
+          <div className="flex flex-col md:flex-row items-center justify-center md:justify-between pt-8 border-t border-glass-border text-center md:text-left">
+            <p className="text-muted-foreground mb-4 md:mb-0">
               © 2025 Humora. Todos os direitos reservados. Feito com 🍇 by{" "}
               <a
                 href="https://www.linkedin.com/in/fabio-matsumoto/"
@@ -333,14 +375,26 @@ export default function Index() {
               </a>
             </p>
             <div className="flex items-center space-x-6 text-muted-foreground">
-              <a href="#" className="hover:text-foreground transition-colors">
-                Twitter
+              <a
+                href="#"
+                className="hover:text-foreground transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="hover:text-foreground transition-colors">
-                LinkedIn
+              <a
+                href="#"
+                className="hover:text-foreground transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="hover:text-foreground transition-colors">
-                Instagram
+              <a
+                href="#"
+                className="hover:text-foreground transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>
