@@ -1,21 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
+import { CompanyIcon } from "./company-icon";
 
 export const Header = () => {
   const navigate = useNavigate();
   return (
     <nav className="fixed top-0 w-full z-50 glass-effect border-b border-glass-border">
-      <div className="flex items-center justify-between p-6 max-w-7xl mx-auto">
+      <div className="flex items-center justify-between py-2 px-4 sm:p-4 max-w-7xl mx-auto">
         <button
           className="flex items-center space-x-3"
           onClick={() => navigate("/")}
         >
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F32890c9d769e420f993df6a7c6d5461f%2F146fc03c343146459ddb91594750a5ab?format=webp&width=800"
-            alt="Humora"
-            className="w-12 h-16"
-          />
-          <span className="text-2xl font-bold text-foreground tracking-tight">
+          <CompanyIcon />
+          <span className="text-2xl font-bold text-foreground tracking-tight hidden sm:block">
             Humora
           </span>
         </button>

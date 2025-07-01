@@ -103,8 +103,8 @@ export default function Dashboard() {
           <div className="lg:col-span-2">
             <Card className="glass-effect border-glass-border">
               <CardHeader className="p-8">
-                <div className="w-12 h-12 bg-gradient-to-br from-gradient-purple to-gradient-blue rounded-2xl flex items-center justify-center mb-4">
-                  <Plus className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 bg-gradient-to-br bg-white rounded-2xl flex items-center justify-center mb-4">
+                  <Plus className="w-6 h-6 text-black" />
                 </div>
                 <CardTitle className="text-2xl text-foreground mb-2">
                   Novo Registro

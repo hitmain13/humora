@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/header";
+import { CompanyIcon } from "@/components/company-icon";
 
 export default function Index() {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ export default function Index() {
     <div className="min-h-screen bg-background">
       <Header />
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 hero-gradient">
+      <section className="relative pt-28 sm:pt-40 hero-gradient">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <Badge
             variant="secondary"
@@ -39,7 +40,7 @@ export default function Index() {
             Novo: Análise com IA avançada
           </Badge>
 
-          <h1 className="text-6xl md:text-8xl font-light text-foreground mb-8 leading-[0.9] tracking-tight">
+          <h1 className="text-6xl md:text-8xl font-light text-foreground mb-8 tracking-tight">
             Monitore suas emoções com{" "}
             <span className="gradient-text font-normal">
               inteligência artificial
@@ -51,11 +52,11 @@ export default function Index() {
             personalizados para melhorar seu bem-estar emocional.
           </p>
 
-          <div className="flex items-center justify-center gap-6 flex-wrap">
+          <div className="flex items-center justify-center gap-6 flex-wrap z-10">
             <Button
               size="lg"
               onClick={() => navigate("/dashboard")}
-              className="text-lg px-8 py-4 bg-white text-black hover:bg-white/90 font-semibold metal-shine h-14"
+              className="text-lg px-8 py-4 bg-white text-black hover:bg-white/90 font-semibold metal-shine h-14 z-10"
             >
               Começar agora
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -63,10 +64,20 @@ export default function Index() {
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 py-4 glass-effect border-glass-border hover:border-white/30 text-foreground h-14 glass-hover"
+              className="text-lg px-8 py-4 glass-effect border-glass-border hover:border-white/30 text-foreground h-14 glass-hover z-10"
             >
               Ver demonstração
             </Button>
+          </div>
+
+          {/* Hero Image */}
+          <div className="flex justify-center -mt-24 w-full max-w-5xl mx-auto animate-levitate -z-10">
+            <div className="absolute -inset-x-20 -bottom-20 bg-gradient-to-r from-gradient-purple/5 to-gradient-blue/10 blur-3xl rounded-full"></div>
+            <img
+              src="/hero-mock-up.png"
+              alt="Humora app mock-up"
+              className="relative max-w-[512px] h-auto rounded-2xl z-0"
+            />
           </div>
         </div>
 
@@ -185,9 +196,6 @@ export default function Index() {
           <Card className="glass-effect border-glass-border overflow-hidden">
             <div className="absolute inset-0 gradient-bg opacity-30"></div>
             <CardContent className="relative p-16 text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-gradient-purple to-gradient-pink rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl shadow-purple-500/25">
-                <Heart className="w-10 h-10 text-white" />
-              </div>
               <h2 className="text-5xl md:text-6xl font-light text-foreground mb-6 tracking-tight leading-tight">
                 O futuro do seu{" "}
                 <span className="gradient-text">bem-estar emocional</span>{" "}
@@ -211,7 +219,7 @@ export default function Index() {
                   variant="outline"
                   className="text-lg px-8 py-4 glass-effect border-glass-border hover:border-white/30 text-foreground h-14 glass-hover"
                 >
-                  Falar com especialista
+                  Falar conosco
                 </Button>
               </div>
             </CardContent>
@@ -225,11 +233,7 @@ export default function Index() {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="md:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F32890c9d769e420f993df6a7c6d5461f%2Fbcc1ecc187d54e1a8e170d8c5471fb1e?format=webp&width=800"
-                  alt="Humora"
-                  className="w-10 h-10"
-                />
+                <CompanyIcon className="w-10 h-10" />
                 <span className="text-2xl font-bold text-foreground">
                   Humora
                 </span>
@@ -320,7 +324,13 @@ export default function Index() {
 
           <div className="flex items-center justify-between pt-8 border-t border-glass-border">
             <p className="text-muted-foreground">
-              © 2024 Humora. Todos os direitos reservados.
+              © 2025 Humora. Todos os direitos reservados. Feito com 🍇 by{" "}
+              <a
+                href="https://www.linkedin.com/in/fabio-matsumoto/"
+                className="underline underline-offset-1"
+              >
+                Matsu
+              </a>
             </p>
             <div className="flex items-center space-x-6 text-muted-foreground">
               <a href="#" className="hover:text-foreground transition-colors">

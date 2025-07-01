@@ -47,6 +47,10 @@
     --gradient-pink: 320 86% 60%;
     --gradient-yellow: 45 93% 47%;
     --gradient-white: 0 0% 100%;
+    --gradient-red: 0 72% 51%;
+    --gradient-green: 142 76% 36%;
+    --gradient-orange: 25 95% 53%;
+    --gradient-black: 0 0% 0%;
 
     /* Mood colors with gradients */
     --mood-very-low: 0 72% 51%;
@@ -132,7 +136,7 @@
       hsl(var(--gradient-purple)),
       hsl(var(--gradient-blue)) 31%,
       hsl(var(--gradient-pink)) 78%,
-      hsl(var(--gradient-red)) 96%
+      hsl(var(--gradient-white)) 96%
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -211,7 +215,34 @@
         hsl(var(--gradient-pink) / 0.1) 0%,
         transparent 50%
       );
-    min-height: 100vh;
     overflow-x: hidden;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  @keyframes levitate {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  .animate-levitate {
+    animation: levitate 6s ease-in-out infinite;
   }
 }

@@ -1,8 +1,9 @@
+import { BackButton } from "@/components/back-button";
+import { CompanyIcon } from "@/components/company-icon";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Brain } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export default function Register() {
@@ -15,18 +16,18 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-background hero-gradient flex items-center justify-center p-6">
-      {/* Floating gradient orbs */}
-      <div className="absolute top-1/3 right-10 w-64 h-64 bg-gradient-blue/20 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
-      <div className="absolute bottom-1/3 left-10 w-48 h-48 bg-gradient-pink/20 rounded-full blur-3xl animate-pulse delay-1500 pointer-events-none"></div>
+    <div className="min-h-screen bg-background hero-gradient flex items-center flex-col justify-center p-6 gap-8">
+      <div className="absolute top-1/4 left-10 w-64 h-64 bg-gradient-purple/20 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+      <div className="absolute bottom-1/4 right-10 w-48 h-48 bg-gradient-blue/20 rounded-full blur-3xl animate-pulse delay-1000 pointer-events-none"></div>
+      <div className="absolute bottom-1/3 right-96 w-48 h-48 bg-gradient-pink/20 rounded-full blur-3xl animate-pulse delay-1000 pointer-events-none"></div>
+      <div className="absolute bottom-1/2 right-128 w-48 h-48 bg-gradient-purple/20 rounded-full blur-3xl animate-pulse delay-1000 pointer-events-none"></div>
+
+      <BackButton />
 
       <Card className="w-full max-w-md glass-effect border-glass-border relative z-10">
         <CardHeader className="text-center p-8">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F32890c9d769e420f993df6a7c6d5461f%2Fbcc1ecc187d54e1a8e170d8c5471fb1e?format=webp&width=800"
-            alt="Humora"
-            className="w-16 h-16 mx-auto mb-6"
-          />
+          <CompanyIcon className="mx-auto mb-6" />
+
           <CardTitle className="text-3xl font-light text-foreground mb-3">
             Criar conta no Humora
           </CardTitle>

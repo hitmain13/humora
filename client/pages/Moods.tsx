@@ -1,3 +1,4 @@
+import { CompanyIcon } from "@/components/company-icon";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Brain } from "lucide-react";
@@ -11,11 +12,8 @@ export default function Moods() {
       <nav className="fixed top-0 w-full z-50 glass-effect border-b border-glass-border">
         <div className="flex items-center justify-between p-6 max-w-7xl mx-auto">
           <div className="flex items-center space-x-3">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F32890c9d769e420f993df6a7c6d5461f%2Fbcc1ecc187d54e1a8e170d8c5471fb1e?format=webp&width=800"
-              alt="Humora"
-              className="w-10 h-10"
-            />
+            <CompanyIcon className="w-10 h-10" />
+
             <span className="text-2xl font-bold text-foreground tracking-tight">
               Humora
             </span>
