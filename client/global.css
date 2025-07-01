@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 0 0% 1%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 6% 10%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 64%;
+
+    --accent: 262 83% 20%;
+    --accent-foreground: 262 83% 90%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+
+    /* Scale.com inspired colors */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --gradient-purple: 262 83% 58%;
+    --gradient-blue: 220 70% 50%;
+    --gradient-pink: 320 86% 60%;
+    --gradient-yellow: 45 93% 47%;
+    --gradient-white: 0 0% 100%;
+
+    /* Mood colors with gradients */
+    --mood-very-low: 0 72% 51%;
+    --mood-low: 25 95% 53%;
+    --mood-neutral: 45 93% 47%;
+    --mood-good: 142 76% 36%;
+    --mood-excellent: 262 83% 58%;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 1%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 6% 10%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 64%;
+
+    --accent: 262 83% 20%;
+    --accent-foreground: 262 83% 90%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 262 83% 58%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  /* Scale.com inspired gradients */
+  .gradient-text {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gradient-purple)),
+      hsl(var(--gradient-blue)) 31%,
+      hsl(var(--gradient-pink)) 78%,
+      hsl(var(--gradient-red)) 96%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gradient-purple) / 0.1),
+      hsl(var(--gradient-blue) / 0.1) 31%,
+      hsl(var(--gradient-pink) / 0.1) 78%
+    );
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-hover {
+    transition: all 0.3s ease;
+  }
+
+  .glass-hover:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .metal-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .metal-shine:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    animation: shine 0.6s ease-in-out;
+  }
+
+  @keyframes shine {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  .hero-gradient {
+    background:
+      radial-gradient(
+        ellipse 120% 80% at center,
+        hsl(var(--gradient-purple) / 0.15) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 100% 60% at 80% 50%,
+        hsl(var(--gradient-blue) / 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 100% 60% at 20% 80%,
+        hsl(var(--gradient-pink) / 0.1) 0%,
+        transparent 50%
+      );
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
